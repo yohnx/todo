@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <h1 class="text-3xl text-black-200">Edit Todo list</h1><br>
+    <form class="px-8" method="post" action=".">
+        {% csrf_token %}
+        <div>
+            <label class="text-black">Name</label>
+            <input value="{{todolist.name}}" name="name" type="text" class="w-full py-4 px-8 bg-green-500 text-white">
+        </div>
+        <div>
+            <label class="text-black">Description</label>
+            <textarea name="description" type="text" class="w-full py-4 px-8 bg-green-500 text-white">{{todolist.description}}</textarea>
+        </div><br>
+        <div>
+            <button class="text-1xl text-white py-3 px-6 bg-blue-400">Edit</button>
+        </div>
+    </form>
+{% endblock %}
